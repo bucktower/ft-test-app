@@ -4617,7 +4617,7 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-feathery-js-client-sdk@1.1.0, feathery-js-client-sdk@^1.1.0:
+feathery-js-client-sdk@1.1.0, feathery-js-client-sdk@^1.0.13:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/feathery-js-client-sdk/-/feathery-js-client-sdk-1.1.0.tgz#7554e04864edc36dea07e3196ba5853c974251a4"
   integrity sha512-v9xaHbmtr+XZ5bxTBgk1D5bteJ6uzd1VWu+14ktQhkmuSqK/HukkyfPp9vqXmgYz0eWlblaeQ/9xOZ3br5YoXA==
@@ -4627,7 +4627,7 @@ feathery-js-client-sdk@1.1.0, feathery-js-client-sdk@^1.1.0:
 "feathery-react-client-sdk@file:../feathery-react-client-sdk":
   version "1.0.4"
   dependencies:
-    feathery-js-client-sdk "^1.1.0"
+    feathery-js-client-sdk "^1.0.13"
 
 figgy-pudding@^3.5.1:
   version "3.5.1"

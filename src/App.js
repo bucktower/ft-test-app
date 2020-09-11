@@ -2,38 +2,43 @@ import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import FeatheryClient from 'feathery-js-client-sdk'
-import { Feathery, useFeathery, FeatheryPanel } from 'feathery-react-client-sdk';
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Checkbox, Input, Button } from 'semantic-ui-react'
 import InputNumber from 'rc-input-number';
 
+const key = 'b.edwards@walmart.com';
+
 function App() {
-  const client = new FeatheryClient('ae33f899-e913-4e10-9fe7-c229931a382b', 'b.edwards@walmart.com');
+  const client = new FeatheryClient('ae33f899-e913-4e10-9fe7-c229931a382b', key);
   const [servars, setServars] = useState([]);
+  const [header, setHeader] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     client.fetchPanel()
     .then(panel => {
-      console.log(panel);
       setServars(panel.servars);
+      if (panel.header) setHeader(panel.header);
+      if (panel.description) setDescription(panel.description);
     })
     .catch(error => {console.error(error)});
   }, [])
 
   return (
-    <Feathery sdkKey='ae33f899-e913-4e10-9fe7-c229931a382b' userKey='b.edwards@walmart.com'>
+    <div>
       <div className="App">
         {/* <MyComponent /> */}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Welcome to a SaaS!
+            Welcome, {key}
           </p>
-          <Popup trigger={<button>Configure your settings</button>} modal>
+          <Popup trigger={<button>Configure your personalized settings</button>} modal>
             {close => (
               <div className="modal">
-                <h1>Configuration</h1>
+                {header && <h1>{header}</h1>}
+                {description && <span>{description}</span>}
                 {servars.map((servar) => {
                   switch(servar.type) {
                     case 'checkbox':
@@ -69,7 +74,7 @@ function App() {
                 })}
                 <br />
                 <Button onClick={close}>
-                  Done
+                  Submit
                 </Button>
 
             </div>
@@ -79,7 +84,7 @@ function App() {
           {/* <FeatheryPanel /> */}
         </header>
       </div>
-    </Feathery>
+    </div>
   );
 }
 
