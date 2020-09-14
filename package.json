@@ -7,7 +7,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "bootstrap": "^4.5.2",
-    "feathery-js-client-sdk": "1.1.0",
+    "feathery-js-client-sdk": "1.0.14",
     "feathery-react-client-sdk": "file:../feathery-react-client-sdk",
     "rc-input-number": "^6.0.0",
     "react": "^16.13.1",
