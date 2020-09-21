@@ -14,16 +14,64 @@ function App() {
   const [servars, setServars] = useState([]);
   const [header, setHeader] = useState("");
   const [description, setDescription] = useState("");
+  const [stepNum, setStepNum] = useState(null);
+
+  const fillDefaults = servars => {
+    return servars.map(s => {
+      if (s.value === null) {
+        if (s.type === "checkbox") s.value = false;
+        else if (s.type === "integer_field") s.value = 0;
+        else s.value = "";
+      }
+      return s;
+    })
+  }
 
   useEffect(() => {
-    client.fetchPanel()
-    .then(panel => {
-      setServars(panel.servars);
-      if (panel.header) setHeader(panel.header);
-      if (panel.description) setDescription(panel.description);
+    client.fetchFirstStep()
+    .then(step => {
+      setServars(fillDefaults(step.servars));
+      setStepNum(step.step);
+      if (step.header) setHeader(step.header);
+      if (step.description) setDescription(step.description);
     })
     .catch(error => {console.error(error)});
   }, [])
+
+  const handleChange = (e) => {
+    const target = e.target;
+    const value = target.type === "checkbox" ? target.checked : target.value;
+    const name = target.name;
+    const newServars = servars.map((s) => {
+      if (s.id !== name) return s;
+      s.value = value;
+      return s;
+    })
+    setServars(newServars);
+  }
+
+  const submit = (close) => () => {
+      const submitServars = servars.map(s => {
+        return {"key": s.key, [s.type]: s.value};
+      });
+      client.submitStep(stepNum, submitServars)
+      .then(step => {
+        if (step.step === null) close();
+        else {
+          console.log(step)
+          setServars(fillDefaults(step.servars));
+          setStepNum(step.step);
+          if (step.header) setHeader(step.header);
+          else setHeader("");
+          if (step.description) setDescription(step.description);
+          else setDescription("");
+        }
+      })
+      .catch(error => {
+        console.log("HI");
+        console.error(error)
+      });
+  }
 
   return (
     <div>
@@ -46,9 +94,11 @@ function App() {
                         <div>
                           <h3>{servar.name}</h3>
                           <Checkbox
-                            defaultChecked={servar.value}
+                            checked={servar.value}
                             key={servar.id}
-                          > 
+                            name={servar.id}
+                            onChange={handleChange}
+                          >
                           </Checkbox>
                         </div>
                       );
@@ -57,7 +107,9 @@ function App() {
                         <div>
                           <h3>{servar.name}</h3>
                           <InputNumber
-                            defaultValue={servar.value}
+                            value={servar.value}
+                            name={servar.id}
+                            onChange={handleChange}
                           />
                         </div>
                       )
@@ -66,15 +118,19 @@ function App() {
                         <div>
                           <h3>{servar.name}</h3>
                           <div style={{ width: 160 }}>
-                            <Input defaultValue={servar.value} />
+                            <Input
+                                value={servar.value}
+                                name={servar.id}
+                                onChange={handleChange}
+                            />
                           </div>
                         </div>
                       );
                   }
                 })}
                 <br />
-                <Button onClick={close}>
-                  Submit
+                <Button onClick={submit(close)}>
+                  Next
                 </Button>
 
             </div>
