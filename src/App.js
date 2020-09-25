@@ -58,7 +58,6 @@ function App() {
       .then(step => {
         if (step.step === null) close();
         else {
-          console.log(step)
           setServars(fillDefaults(step.servars));
           setStepNum(step.step);
           if (step.header) setHeader(step.header);
@@ -68,7 +67,6 @@ function App() {
         }
       })
       .catch(error => {
-        console.log("HI");
         console.error(error)
       });
   }
@@ -106,7 +104,8 @@ function App() {
                       return (
                         <div>
                           <h3>{servar.name}</h3>
-                          <InputNumber
+                          <Input
+                            type="number"
                             value={servar.value}
                             name={servar.id}
                             onChange={handleChange}
