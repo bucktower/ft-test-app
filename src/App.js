@@ -5,12 +5,11 @@ import FeatheryClient from 'feathery-js-client-sdk'
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Checkbox, Input, Button } from 'semantic-ui-react'
-import InputNumber from 'rc-input-number';
 
 const key = 'b.edwards@walmart.com';
 
 function App() {
-  const client = new FeatheryClient('ae33f899-e913-4e10-9fe7-c229931a382b', key);
+  const client = new FeatheryClient('bd6b24fd-ef14-49a6-9411-0db91b0b066f', key);
   const [servars, setServars] = useState([]);
   const [header, setHeader] = useState("");
   const [description, setDescription] = useState("");
@@ -28,7 +27,7 @@ function App() {
   }
 
   useEffect(() => {
-    client.fetchFirstStep()
+    client.fetchFirstIncompleteStep()
     .then(step => {
       setServars(fillDefaults(step.servars));
       setStepNum(step.step);
@@ -36,7 +35,7 @@ function App() {
       if (step.description) setDescription(step.description);
     })
     .catch(error => {console.error(error)});
-  }, [])
+  }, [client])
 
   const handleChange = (e) => {
     const target = e.target;

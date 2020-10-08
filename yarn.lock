@@ -4617,10 +4617,10 @@ fbjs@^0.8.1:
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.18"
 
-feathery-js-client-sdk@1.0.17:
-  version "1.0.17"
-  resolved "https://registry.yarnpkg.com/feathery-js-client-sdk/-/feathery-js-client-sdk-1.0.17.tgz#17a090e48aef255b1d383c84c6407e7eda7d100d"
-  integrity sha512-S6dbRTmw5bf+X1Tp9qh6tTCj5+sPP0DXoP4BcFNgEb+5cHTNYHeyaeu89IxozByAPJBy7c6oIWCQufETcSYcQQ==
+feathery-js-client-sdk@1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/feathery-js-client-sdk/-/feathery-js-client-sdk-1.0.19.tgz#f895317f27f2f055f20dd53edc510b30426b8f12"
+  integrity sha512-96w++sfJQwUDlBIoU0MHbklZmvEC56sxjPylDSw5lE5pM916GjLymIu7FxnLdLKIEXmFfWL4qcM823lI2r9cnQ==
   dependencies:
     jquery "^3.5.1"
 
