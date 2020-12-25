@@ -4,10 +4,13 @@ import 'reactjs-popup/dist/index.css';
 import { Feathery } from 'feathery-react-client-sdk';
 
 function App() {
+  // air.inc
   return <Feathery
-      sdkKey='bd6b24fd-ef14-49a6-9411-0db91b0b066f'
-      userKey='b.edwards@walmart.com'
-      redirectURI='https://google.com'
+    sdkKey='f22d8830-d101-4599-9023-97ea74aaa4d5'
+    userKey='test_user'
+    clientKey=''
+    redirectURI={null}
+    companyKey='test_user'
   />
 }
 
