@@ -4922,7 +4922,7 @@ fbjs@^0.8.1:
     ua-parser-js "^0.7.18"
 
 "feathery-react-client-sdk@file:../feathery-react-client-sdk":
-  version "1.0.23"
+  version "1.0.24"
   dependencies:
     "@zendeskgarden/react-loaders" "^8.28.1"
     "@zendeskgarden/react-theming" "^8.29.0"
