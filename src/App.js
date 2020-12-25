@@ -9,8 +9,6 @@ function App() {
     sdkKey='f22d8830-d101-4599-9023-97ea74aaa4d5'
     userKey='test_user'
     clientKey=''
-    redirectURI={null}
-    companyKey='test_user'
   />
 }
 
