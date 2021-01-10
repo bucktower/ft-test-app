@@ -1835,6 +1835,14 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
+"@types/react@>=16.9.35":
+  version "17.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.0.tgz#5af3eb7fad2807092f0046a1302b7823e27919b8"
+  integrity sha512-aj/L7RIMsRlWML3YB6KZiXB3fV2t41+5RBGYF8z+tAKU43Px8C3cYUZsDvf1/+Bm4FK21QWBrDutu8ZJ/70qOw==
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^3.0.2"
+
 "@types/stack-utils@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-1.0.1.tgz#0a851d3bd96498fa25c33ab7278ed3bd65f06c3e"
@@ -2108,17 +2116,17 @@
     "@babel/runtime" "^7.8.4"
 
 "@zendeskgarden/react-loaders@^8.28.1":
-  version "8.29.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-loaders/-/react-loaders-8.29.0.tgz#b46608df6a6a980f085fdffc2d4cf223bce498f6"
-  integrity sha512-pnyKhqkXfRWzztYis4OVW4pS5sgpKXzlLhynZ7oSsvmXP3vJvNuJwXxuMQyerACAHBjCe23VJtuaCDcip4VAaw==
+  version "8.29.2"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-loaders/-/react-loaders-8.29.2.tgz#052b38dd9227f887dc8f6b177932b326143e09f5"
+  integrity sha512-s7LpXjvqGcrXk4Z9S9uUwJ3E39OCUV2GcYcTm2tkB5jQBiwf1tfoM6A2B4wKr3KkLKIOdEenxORzjGbmOHZIkw==
   dependencies:
     "@zendeskgarden/container-schedule" "^1.3.1"
     polished "^4.0.0"
 
 "@zendeskgarden/react-theming@^8.29.0":
-  version "8.29.0"
-  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-theming/-/react-theming-8.29.0.tgz#37998482392760c2967810530c701f7c2f67b161"
-  integrity sha512-NnCVb/Tw+oSYvPsAM6SDrEKJHBHhYnMUSBxBArt8ige1NHHjqPZyiFv2rMBpxSiyFgKvmaH5wP2dzhLH894xvQ==
+  version "8.29.2"
+  resolved "https://registry.yarnpkg.com/@zendeskgarden/react-theming/-/react-theming-8.29.2.tgz#040bd6f3f7f1b2451a8d060b5fbf4b8c6e7467c5"
+  integrity sha512-tVvlrW4dawvjL/3ci+q6nkAy/Bi+d+WTrbAZ1wyM65L60D8f8AIanr/71j979BVR16txCHMvDCnjOygOxxXh8w==
   dependencies:
     "@zendeskgarden/container-focusvisible" "^0.4.3"
     "@zendeskgarden/container-utilities" "^0.5.1"
@@ -4922,7 +4930,7 @@ fbjs@^0.8.1:
     ua-parser-js "^0.7.18"
 
 "feathery-react-client-sdk@file:../feathery-react-client-sdk":
-  version "1.0.24"
+  version "1.0.28"
   dependencies:
     "@zendeskgarden/react-loaders" "^8.28.1"
     "@zendeskgarden/react-theming" "^8.29.0"
@@ -9172,7 +9180,7 @@ react-app-polyfill@^1.0.6:
     regenerator-runtime "^0.13.3"
     whatwg-fetch "^3.0.0"
 
-react-bootstrap@^1.3.0, react-bootstrap@^1.4.0:
+react-bootstrap@^1.3.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.4.0.tgz#806a8b48b065cedfb28c6c5c7b0c0e3c3b53445d"
   integrity sha512-0BMzgeUAxH126v7VYDzIXbHxQVHSnniPVKpz9fblumdQpWaiElMnnzk+u8h8DoELX0nCXwPlcUzgXqmpncdc2Q==
@@ -9184,6 +9192,30 @@ react-bootstrap@^1.3.0, react-bootstrap@^1.4.0:
     "@types/invariant" "^2.2.33"
     "@types/prop-types" "^15.7.3"
     "@types/react" "^16.9.35"
+    "@types/react-transition-group" "^4.4.0"
+    "@types/warning" "^3.0.0"
+    classnames "^2.2.6"
+    dom-helpers "^5.1.2"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+    prop-types-extra "^1.1.0"
+    react-overlays "^4.1.0"
+    react-transition-group "^4.4.1"
+    uncontrollable "^7.0.0"
+    warning "^4.0.3"
+
+react-bootstrap@^1.4.0:
+  version "1.4.3"
+  resolved "https://registry.yarnpkg.com/react-bootstrap/-/react-bootstrap-1.4.3.tgz#9a76a66800b57f422dd824c9dbe4c9dcef634790"
+  integrity sha512-4tYhk26KRnK0myMEp2wvNjOvnHMwWfa6pWFIiCtj9wewYaTxP7TrCf7MwcIMBgUzyX0SJXx6UbbDG0+hObiXNg==
+  dependencies:
+    "@babel/runtime" "^7.4.2"
+    "@restart/context" "^2.1.4"
+    "@restart/hooks" "^0.3.21"
+    "@types/classnames" "^2.2.10"
+    "@types/invariant" "^2.2.33"
+    "@types/prop-types" "^15.7.3"
+    "@types/react" ">=16.9.35"
     "@types/react-transition-group" "^4.4.0"
     "@types/warning" "^3.0.0"
     classnames "^2.2.6"
