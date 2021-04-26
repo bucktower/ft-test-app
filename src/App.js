@@ -1,13 +1,18 @@
 import React from 'react';
 import { Feathery } from 'feathery-react';
 
-const sdkKey = '07a5797d-f8f8-4858-9ad6-2a2dd766d63e'
-const userKey = 'e'
-
 function App() {
-  Feathery.init(sdkKey, userKey);
+  Feathery.init('4d4c723a-b156-43f9-96a7-36fe65b1d311', 'test-user');
 
-  return <Feathery.Form formKey='screening_template'/>
+  return <Feathery.Form
+      formKey='check-my-offer'
+      initialValues={{'offer-first-name': 'Peter', 'offer-last-name': 'Dun'}}
+      onLoad={(context) => {
+          if (context.stepName === 'car-info') {
+              context.setValues({'test-key': 'test-value1'});
+          }
+      }}
+  />
 }
 
 export default App;
