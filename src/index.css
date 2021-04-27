@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "FF Sero Std";
+  font-weight: 300;
+  src: local('FF Sero Std'), url('fonts/FF Sero Std.woff') format('woff');
+}

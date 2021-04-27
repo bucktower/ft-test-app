@@ -6,10 +6,11 @@ function App() {
 
   return <Feathery.Form
       formKey='check-my-offer'
-      initialValues={{'offer-first-name': 'Peter', 'offer-last-name': 'Dun'}}
       onLoad={(context) => {
-          if (context.stepName === 'car-info') {
-              context.setValues({'test-key': 'test-value1'});
+          if (context.stepName === 'no-info') {
+              context.setValues({'has-info': 'no'});
+          } else if (context.stepName === 'pick-loan') {
+              context.setOptions({'offer-multiple-loans': ['your first loan', 'your second loan']});
           }
       }}
   />
